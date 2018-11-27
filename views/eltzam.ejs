@@ -1,0 +1,354 @@
+<html>
+
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="shortcut icon" type="image/png" href="img/icon.png" />
+    <link rel="shortcut icon" type="image/png" href="img/icon.png" />
+    <title>التزامات الضباط</title>
+    <link rel="stylesheet" href="custom/css/material.min.css">
+    <link rel="stylesheet" href="custom/css/footable.core.standalone.min.css">
+    <link rel="stylesheet" href="custom/css/footable.core.bootstrap.min.css">
+    <link rel="stylesheet" href="custom/css/footable.editing.min.css">
+    <link rel="stylesheet" href="custom/css/footable.filtering.min.css">
+    <link rel="stylesheet" href="custom/css/footable.paging.min.css">
+    <link rel="stylesheet" href="custom/css/footable.sorting.min.css">
+    <link rel='stylesheet' href='custom/css/bootstrap.min.css' />
+    <link rel="stylesheet" href="custom/css/jquery-ui.css">
+    <link rel="stylesheet" href="custom/css/dialog-polyfill.css">
+
+
+    <script src="custom/js/jquery.js"></script>
+    <script src="custom/js/material.min.js"></script>
+    <script src="custom/js/footable.core.min.js"></script>
+    <script src="custom/js/footable.editing.min.js"></script>
+    <script src="custom/js/footable.filtering.js"></script>
+    <script src="custom/js/footable.paging.min.js"></script>
+    <script src="custom/js/jquery.nicescroll.js"></script>
+    <script src="custom/js/footable.sorting.min.js"></script>
+    <script src="custom/js/footable.state.min.js"></script>
+    <script src="custom/js/jquery-ui.js"></script>
+    <script src="custom/js/dialog-polyfill.js"></script>
+    <link rel="font-woff2" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/fonts/glyphicons-halflings-regular.woff2">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        .material-icons {
+            line-height: 2;
+        }
+
+        .mdl-layout__header {
+            background-color: #0092c8;
+        }
+
+        .mdl-layout__content {
+            background-color: #e4e4e4;
+        }
+
+        .mdl-layout__tab-bar-button {
+            background-color: #0092c8;
+        }
+
+        .mdl-layout__tab-bar {
+            background-color: #0092c8;
+        }
+
+        .footable-details.table>tbody>tr>td,
+        .footable-details.table>tbody>tr>th,
+        .footable-details.table>tfoot>tr>td,
+        .footable-details.table>tfoot>tr>th,
+        .footable-details.table>thead>tr>td,
+        .footable-details.table>thead>tr>th,
+        .footable.table>tbody>tr>td,
+        .footable.table>tbody>tr>th,
+        .footable.table>tfoot>tr>td,
+        .footable.table>tfoot>tr>th,
+        .footable.table>thead>tr>td,
+        .footable.table>thead>tr>th {
+            padding: 15px;
+        }
+
+        .page-content {
+            padding: 25px;
+        }
+
+        .footable .btn {
+            padding: 9px 12px;
+        }
+
+        .footable.table>tbody>tr>td {
+            vertical-align: baseline;
+        }
+
+        .mdl-button--raised.mdl-button--colored {
+            background: #0092c8;
+        }
+
+        .mdl-button--raised.mdl-button--colored:focus:not(:active) {
+            background-color: #0092c8;
+        }
+
+        .mdl-button--raised.mdl-button--colored:active {
+            background-color: #0092c8;
+        }
+
+        .mdl-button--raised.mdl-button--colored:hover {
+            background-color: #0092c8;
+        }
+
+        .ui-widget-header {
+            background: #0092c8;
+        }
+
+        .data-sliders {
+            float: left;
+           /*display: -webkit-inline-box !important;*/
+        }
+
+        .slider {
+            margin-left: 70px;
+        }
+
+        .mdl-dialog {
+            width: 50%;
+        }
+
+        .mdl-textfield {
+            width: 100%;
+        }
+    </style>
+</head>
+<!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
+    <header class="mdl-layout__header">
+        <!--<div class="mdl-layout__header-row">-->
+        <!--&lt;!&ndash; Title &ndash;&gt;-->
+        <!--<span class="mdl-layout-title">Mazboot</span>-->
+        <!--</div>-->
+
+
+        <!-- Tabs -->
+        <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+            <a href="#patients-tab" class="mdl-layout__tab is-active mdl-typography--font-bold">
+التزامات الضباط            </a>
+
+        </div>
+    </header>
+    <!--<div class="mdl-layout__drawer">-->
+    <!--<span class="mdl-layout-title">Mazboot</span>-->
+    <!--<nav class="mdl-navigation">-->
+    <!--<a class="mdl-navigation__link" href="users.html">Users</a>-->
+    <!--<a class="mdl-navigation__link" href="articles.html">Articles</a>-->
+    <!--</nav>-->
+    <!--</div>-->
+
+    <main class="mdl-layout__content">
+        <section class="mdl-layout__tab-panel is-active" id="patients-tab">
+            <div class="page-content">
+                <!-- Your content goes here -->
+                <table  id="patients" class="table mdl-data-table mdl-js-data-table mdl-shadow--2dp " data-filtering="true" data-sorting="true">
+                    <!--<a href="#" onclick="selectPatientPage();">-->
+                    <!--<button class="mdl-button mdl-js-button mdl-button&#45;&#45;raised mdl-js-ripple-effect mdl-button&#45;&#45;accent">-->
+                    <!--Select All-->
+                    <!--</button>-->
+                    <!--</a>-->
+                    <!--<a href="#" onclick="unSelectPatientPage();">-->
+                    <!--<button class="mdl-button mdl-js-button mdl-button&#45;&#45;raised mdl-js-ripple-effect mdl-button&#45;&#45;accent">-->
+                    <!--Deselect All-->
+                    <!--</button>-->
+                    <!--</a>-->
+                    <!--<a href="#" onclick="sendNotification();">-->
+                    <!--<button class="mdl-button mdl-js-button mdl-button&#45;&#45;raised mdl-js-ripple-effect mdl-button&#45;&#45;colored">-->
+                    <!--Send Notification-->
+                    <!--</button>-->
+                    <!--</a>-->
+                    <thead>
+
+                    <tr>
+                        <th class="mdl-data-table__cell--non-numeric" data-name="id" data-breakpoints="xs" data-type="number">الرقم العسكرى</th>
+                        <th class="mdl-data-table__cell--non-numeric text-center" data-name="name">اسم الضابط</th>
+                        <th class="mdl-data-table__cell--non-numeric" data-name="name">من</th>
+                        <th class="mdl-data-table__cell--non-numeric" data-name="name">الى</th>
+                        <th class="mdl-data-table__cell--non-numeric" data-name="name">الالتزام</th>
+                        <th class="mdl-data-table__cell--non-numeric" data-name="name">مكان الالتزام</th>
+
+                        <!--
+                        <th class="mdl-data-table__cell--non-numeric" data-breakpoints="xs sm" data-type="date" data-format-string="MMMM Do YYYY">Started On</th>
+                        <th class="mdl-data-table__cell--non-numeric" data-breakpoints="xs sm md" data-type="date" data-format-string="MMMM Do YYYY">Date of Birth</th>
+-->
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <%for(let i in eltzam){%>
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric"><%=eltzam[i][0]%></td>
+                        <td class="mdl-data-table__cell--non-numeric"><%=eltzam[i][1]%></td>
+                        <td class="mdl-data-table__cell--non-numeric"><%=eltzam[i][3]%></td>
+                        <td class="mdl-data-table__cell--non-numeric"><%=eltzam[i][4]%></td>
+                        <td class="mdl-data-table__cell--non-numeric"><%=eltzam[i][2]%></td>
+                        <td class="mdl-data-table__cell--non-numeric"><%=eltzam[i][5]%></td>
+                    </tr>
+
+                    <%}%>
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="mdl-layout__tab-panel" id="doctors-tab">
+            <div class="page-content">
+                <!-- Your content goes here -->
+                <table id="doctors" class="table mdl-data-table mdl-js-data-table mdl-shadow--2dp" data-paging="true" data-filtering="true" data-sorting="true">
+                    <thead>
+                    <tr>
+                        <th class="mdl-data-table__cell--non-numeric" data-breakpoints="xs" data-type="number">ID</th>
+                        <th class="mdl-data-table__cell--non-numeric">Name</th>
+                        <th class="mdl-data-table__cell--non-numeric" data-breakpoints="xs">Phone Number</th>
+                        <th class="mdl-data-table__cell--non-numeric">Country</th>
+                        <th class="mdl-data-table__cell--non-numeric">Availability</th>
+                        <th class="mdl-data-table__cell--non-numeric" data-filterable="false" data-sortable="false"></th>
+                        <!--
+                        <th class="mdl-data-table__cell--non-numeric" data-breakpoints="xs sm" data-type="date" data-format-string="MMMM Do YYYY">Started On</th>
+                        <th class="mdl-data-table__cell--non-numeric" data-breakpoints="xs sm md" data-type="date" data-format-string="MMMM Do YYYY">Date of Birth</th>
+-->
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric">1</td>
+                        <td class="mdl-data-table__cell--non-numeric">John</td>
+                        <td class="mdl-data-table__cell--non-numeric">01048231756</td>
+                        <td class="mdl-data-table__cell--non-numeric">Egypt</td>
+                        <td class="mdl-data-table__cell--non-numeric">Active</td>
+                        <td class="mdl-data-table__cell--non-numeric">
+                            <a href="doctor.html">
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                                    Profile
+                                </button>
+                            </a>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</div>
+<dialog class="mdl-dialog" id="dialog">
+    <form method="post">
+        <h5 class="mdl-dialog__title">Send Notification To All Selected</h5>
+        <div id="selected-users" class="mdl-dialog__content">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" name="title" type="text" id="title">
+                <label class="mdl-textfield__label" for="title">Title</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield">
+                <textarea class="mdl-textfield__input" name="content" type="text" rows="3" id="content"></textarea>
+                <label class="mdl-textfield__label" for="content">Content</label>
+            </div>
+            <input type="file" name="picture" accept="image/*">
+        </div>
+        <div class="mdl-dialog__actions">
+            <button id="send" type="submit" class="mdl-button">Send</button>
+            <button id="close" type="button" class="mdl-button close">Close</button>
+        </div>
+    </form>
+</dialog>
+<script>
+    function sendNotification() {
+        var dialog = document.getElementById('dialog');
+        dialog.showModal();
+        var rows = $('#patients > tbody  > tr > td > input').each(function () {
+            if (this.checked) {
+                console.log(this.value)
+                //                console.log($('#selected-users').append)
+                $('#selected-users').append("<input class=\"mdl-textfield__input\" name=\"users[]\" value=\"" + this.value + "\" type=\"text\"hidden>")
+            }
+        })
+        document.querySelector('#close').onclick = function () {
+            dialog.close();
+        };
+    }
+    jQuery(function ($) {
+
+        $('#patients').footable();
+        $('#doctors').footable();
+
+        var filtering = FooTable.get('#patients').use(FooTable.Filtering);
+        $("#patients-age-slider").slider({
+            range: true,
+            min: 1,
+            max: 150,
+            values: [1, 150],
+            slide: function (event, ui) {
+                $("#age-range").val(ui.values[0] + " - " + ui.values[1]);
+                query = ui.values[0] + "<x<" + ui.values[1]
+                filtering.addFilter('age_range', query, ['age']);
+                filtering.filter();
+                console.log(query)
+            }
+        });
+        $("#age-range").val($("#patients-age-slider").slider("values", 0) +
+            " - " + $("#patients-age-slider").slider("values", 1));
+
+        $("#patients-glucose-slider").slider({
+            range: true,
+            min: 1,
+            max: 300,
+            values: [1, 300],
+            slide: function (event, ui) {
+                $("#glucose-range").val(ui.values[0] + " - " + ui.values[1]);
+                query = ui.values[0] + "<x<" + ui.values[1]
+                filtering.addFilter('glucose_range', query, ['glucose']);
+                filtering.filter();
+            }
+        });
+        $("#glucose-range").val($("#patients-glucose-slider").slider("values", 0) +
+            " - " + $("#patients-glucose-slider").slider("values", 1));
+        $("#patients-active-slider").slider({
+            range: true,
+            min: 1,
+            max: 300,
+            values: [1, 300],
+            slide: function (event, ui) {
+                $("#active-range").val(ui.values[0] + " - " + ui.values[1]);
+                query = ui.values[0] + "<x<" + ui.values[1]
+                filtering.addFilter('active_range', query, ['lastdate']);
+                filtering.filter();
+            }
+        });
+        $("#active-range").val($("#patients-active-slider").slider("values", 0) +
+            " - " + $("#patients-active-slider").slider("values", 1));
+    });
+
+
+
+    function toggleCheckbox(element) {
+        //        element.checked = !element.checked;
+        console.log(element)
+        if (element.hasAttribute("checked")) {
+            element.removeAttribute("checked");
+        } else {
+            element.setAttribute("checked", "checked");
+        }
+    }
+
+    function selectPatientPage() {
+        //        alert('test')
+        var rows = $('#patients > tbody  > tr > td > input').each(function () {
+            this.setAttribute("checked", "checked");
+            this.checked = true;
+        })
+    }
+
+    function unSelectPatientPage() {
+        //        alert('test')
+        var rows = $('#patients > tbody  > tr > td > input').each(function () {
+            this.removeAttribute("checked");
+            this.checked = false;
+        })
+    }
+    //    $("main").niceScroll();
+</script>
+
+</html>

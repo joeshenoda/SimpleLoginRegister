@@ -1,0 +1,220 @@
+body {
+    font-size: 13px;
+    line-height: 1.42857143;
+    color: #5e5e5e;
+}
+
+.overview {
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow-x: auto;
+    height: 100%;
+    background: #f8f8f8;
+    border-right: 1px solid #eee;
+}
+
+@media screen and (max-width: 1200px) and (min-width: 768px) {
+    .overview {
+        width: 250px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .overview {
+        width: 300px;
+    }
+}
+
+@media (max-width: 767px) {
+    .overview {
+        width: 100%;
+        background: #333;
+        text-align: center;
+    }
+}
+
+.pmo-pic {
+    position: relative;
+    margin: 20px;
+}
+
+.p-relative {
+    position: relative !important;
+}
+
+@media (min-width: 768px) {
+    .pmo-pic img {
+        width: 100%;
+        max-height: 300px;
+        border-radius: 2px 2px 0 0;
+    }
+}
+
+.pmo-pic .pmop-message {
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    margin-left: -30px;
+}
+
+@media screen and (max-width: 1200px) and (min-width: 768px) {
+    .pmo-pic .pmop-message {
+        bottom: 70px;
+    }
+}
+
+.pmo-pic .pmo-stat {
+    border-radius: 0 0 2px 2px;
+    color: #fff;
+    text-align: center;
+    padding: 1px;
+}
+
+@media (min-width: 768px) {
+    .pmo-pic .pmo-stat {
+        background: #0076a3;
+    }
+}
+
+h2.m-0.c-white {
+    font-size: 35px;
+}
+
+.pmo-block {
+    padding: 25px;
+}
+
+.pmo-block > h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 15px;
+}
+
+.pmo-contact ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.pmo-contact ul li span.contact-key {
+    font-weight: bold;
+}
+
+span.contact-value {
+    float: right;
+}
+
+.active-user {
+    border-radius: 50%;
+    background-color: rgb(71, 216, 77);
+    ;
+}
+
+.active-user {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 5;
+    right: 5;
+    background-color: rgb(71, 216, 77);
+}
+
+.unactive-user {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 5;
+    right: 5;
+    background-color: #bdbbbb;
+}
+
+@media (min-width: 1200px) {
+    .pm-body {
+        padding-left: 300px;
+    }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 768px) {
+    .pm-body {
+        padding-left: 250px;
+    }
+}
+
+.mdl-tabs {
+    display: block;
+    width: initial;
+    overflow-y: auto;
+}
+
+.mdl-tabs__tab {
+    width: 100%;
+}
+
+.record .mdl-card {
+    min-height: 0;
+    margin: 1%;
+    width: 98%;
+}
+
+.record-head {
+    background-color: #eee;
+}
+
+.chips-container {
+    margin-left: 15px;
+}
+
+.footable-details.table,
+.footable.table {
+    margin-bottom: 0;
+}
+
+.mdl-card__subtitle-text {
+    margin: 15px;
+}
+
+.mdl-chip {
+    width: fit-content;
+}
+
+.record {
+    background-color: #dedede;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+.mdl-card__media img {
+    width: 100%;
+    min-width: 284px;
+    height: 300px;
+}
+
+.mdl-chip__contact {
+    height: 55px;
+    width: 55px;
+    border-radius: 30px;
+    margin: 15px;
+}
+
+span.patient-name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.fab-add {
+    position: fixed;
+    bottom: 40px;
+    z-index: 10;
+    right: 25px;
+}
+
+.doctor-chip{
+    height: 32px;
+    width: 32px;
+    border-radius: 16px;
+    margin-right: 8px;
+    margin: 0;
+}
